@@ -26,18 +26,18 @@ def GetChart(matrix, title):
     plt.title(title)
     plt.legend()
 
-def GetBar(matrix,title):
+
+def GetBar(matrix, title):
     plt.figure()
-    plt.bar(range(256), matrix[0])
+    plt.bar(range(len(matrix[0])), matrix[0])
     plt.title(title)
 
+
 titles = ["Red", "Green", "Blue"]
-for i in range(0, 3):
+for i in range(0, len(titles)):
     GetChart(GetMatrix("{0}.txt".format(titles[i])), titles[i])
 
-
-#TODO:проверить  считывание файлов
-titles = ["Y", "Cb", "Cr"]
-for i in range(0, 3):
+titles = ["Y", "Cb", "Cr", "DAB", "DACb", "DACr", "DAG", "DAR", "DAY", "HB", "HCb", "HCr", "HG", "HR", "HY"]
+for i in range(0, len(titles)):
     GetBar(GetMatrix("{0}.txt".format(titles[i])), titles[i])
 plt.show()
